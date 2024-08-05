@@ -8,14 +8,16 @@ else
     LR=$2
 fi
 
-work_path=Infer/rams/
+
+nppt=2
+
+work_path=exp/pred/rams-large_proto_${nppt}_800_div_target2
 mkdir -p $work_path
 
 CUDA_VISIBLE_DEVICES=0 python -u engine.py \
     --dataset_type=rams \
     --context_representation=decoder \
     --model_name_or_path=roberta-large \
-    --inference_model_path=exp/pred/rams-large_proto_2_800_div_target/checkpoint \
     --role_path=./data/dset_meta/description_rams.csv \
     --prompt_path=./data/prompts/prompts_rams_full.csv \
     --seed=$SEED \
@@ -26,10 +28,12 @@ CUDA_VISIBLE_DEVICES=0 python -u engine.py \
     --max_enc_seq_length 500 \
     --max_dec_seq_length 200 \
     --window_size 260 \
+    --warmup_steps 0.1 \
     --bipartite \
-    --inference_only \
     --num_prompt_pos 10 \
-    --single \
-    --hpnfile prototypes_rams/large/prototypes-1024d-66c_mutil2_proto.npy \
-    --num_proto_per_type 2\
-    --role2id_file data/dset_meta/role2id_rams.json
+    --hpnfile prototypes_rams/large/prototypes-1024d-66c_mutil${nppt}_proto.npy \
+    --num_proto_per_type ${nppt} \
+    --role2id_file data/dset_meta/role2id_rams.json \
+    --max_iter 800 
+
+
