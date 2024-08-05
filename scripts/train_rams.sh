@@ -31,7 +31,7 @@ CUDA_VISIBLE_DEVICES=0 python -u engine.py \
     --warmup_steps 0.1 \
     --bipartite \
     --num_prompt_pos 10 \
-    --hpnfile prototypes_rams/large/prototypes-1024d-66c_mutil${nppt}_proto.npy \
+    --hpnfile prototypes_rams/prototypes-1024d-66c_mutil${nppt}_proto.npy \
     --num_proto_per_type ${nppt} \
     --role2id_file data/dset_meta/role2id_rams.json \
     --max_iter 800 
