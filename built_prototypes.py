@@ -15,13 +15,13 @@ from tqdm import tqdm
 #
 def parse_args():
     parser = argparse.ArgumentParser(description="Hyperspherical Multi-prototypes")
-    parser.add_argument('-c', dest="classes", default=81, type=int)
+    parser.add_argument('-c', dest="classes", default=66, type=int)
     parser.add_argument('-d', dest="dims", default=1024, type=int)
     parser.add_argument('-l', dest="learning_rate", default=0.1, type=float)
     parser.add_argument('-m', dest="momentum", default=0.9, type=float)
     parser.add_argument('-e', dest="epochs", default=10000, type=int,)
     parser.add_argument('-s', dest="seed", default=300, type=int)
-    parser.add_argument('-w', dest="wtvfile", default="semantics/wiki_bert_sem.npy", type=str) #wiki_bert_sem.npy
+    parser.add_argument('-w', dest="wtvfile", default="semantics/rams_sem.npy", type=str) #wiki_sem.npy
     parser.add_argument('-per_num',dest="num_proto_per_type", default=3, type=int)
     parser.add_argument('-hd',dest="wtv_dims", default=768, type=int)
     args = parser.parse_args()
@@ -121,5 +121,5 @@ if __name__ == "__main__":
         sys.stdout.flush()
     
     # Store result.
-    np.save(args.resdir + "prototypes-{}d-{}c_mutil{}_proto_sem_test".format(args.dims, args.classes,args.num_proto_per_type), \
+    np.save("prototypes-{}d-{}c_mutil{}_proto_sem_test".format(args.dims, args.classes,args.num_proto_per_type), \
             prototypes.data.cpu().numpy())
