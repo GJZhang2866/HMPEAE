@@ -89,7 +89,6 @@ if __name__ == "__main__":
         wtvv = torch.from_numpy(wtvv).to(device)
         wtvv = wtvv.unsqueeze(1).repeat(1, args.num_proto_per_type, 1).view(-1,args.wtv_dims)
         triplets = [[i,j,i,k] for i in tqdm(range(args.classes)) for j in range(args.classes) for k in range(args.classes) if i != j != k != i]
-        print("Trans 2 numpy.array...............")
         triplets = np.array(triplets).astype(int)
     else:
         use_wtv = False
