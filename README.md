@@ -1,4 +1,4 @@
 # HMPEAE
 
 
-The readme will come soon.
+The README will come soon.
