@@ -21,7 +21,7 @@ def parse_args():
     parser.add_argument('-m', dest="momentum", default=0.9, type=float)
     parser.add_argument('-e', dest="epochs", default=10000, type=int,)
     parser.add_argument('-s', dest="seed", default=300, type=int)
-    parser.add_argument('-w', dest="wtvfile", default="semantics/rams_sem.npy", type=str) #wiki_sem.npy
+    parser.add_argument('-w', dest="wtvfile", default="Semantic_vectors/rams_bert_sem.npy", type=str) #wiki_bert_sem.npy
     parser.add_argument('-per_num',dest="num_proto_per_type", default=3, type=int)
     parser.add_argument('-hd',dest="wtv_dims", default=768, type=int)
     args = parser.parse_args()
