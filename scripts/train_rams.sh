@@ -9,9 +9,9 @@ else
 fi
 
 
-nppt=2
+num_proto_per_type=3
 
-work_path=exp/pred/rams-large_proto_${nppt}_800_div_target2
+work_path=exp/pred/rams-large
 mkdir -p $work_path
 
 CUDA_VISIBLE_DEVICES=0 python -u engine.py \
@@ -31,8 +31,8 @@ CUDA_VISIBLE_DEVICES=0 python -u engine.py \
     --warmup_steps 0.1 \
     --bipartite \
     --num_prompt_pos 10 \
-    --hpnfile prototypes_rams/prototypes-1024d-66c_mutil${nppt}_proto.npy \
-    --num_proto_per_type ${nppt} \
+    --hpnfile prototypes_rams/prototypes-1024d-66c_mutil${num_proto_per_type}_proto.npy \
+    --num_proto_per_type ${num_proto_per_type} \
     --role2id_file data/dset_meta/role2id_rams.json \
     --max_iter 800 
 
