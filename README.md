@@ -2,7 +2,7 @@ Source code for  ACL 2024 paper: [Hyperspherical Multi-Prototype with Optimal Tr
 
  Our code is based on TabEAE (Revisiting Event Argument Extraction: Can EAE Models Learn Better When Being Aware of Event Co-occurrences? ) [here](https://github.com/Stardust-hyx/TabEAE) and thanks for their implement.
 
-## 🚀 How to use?
+## How to use?
 
 ### 1. Dependencies
 In addition to the environment required by TabEAE, you will need to install the following additional packages:
