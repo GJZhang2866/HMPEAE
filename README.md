@@ -21,7 +21,7 @@ An example run for 66 classes, each with 2 prototypes and 1024 dimensions:
 ```bash
 >>  python built_prototypes.py -c 66 -d 1024 -nppt 2 -hd 768 -w Semantic_vectors/rams_bert_sem.npy
 ```
-[Semantic_vectors/rams_bert_sem](./Semantic_vectors/rams_bert_sem) is the semantic vector of role labels obtained by bert. You can also use other encoders like Word2Vec、Sentenc-Bert. 
+[Semantic_vectors/rams_bert_sem](./Semantic_vectors/rams_bert_sem) is the semantic vector of role labels obtained by bert. You can also use other encoders like Word2Vec or Sentenc-Bert. 
 
 ### 3. Training and Evaluation
 
