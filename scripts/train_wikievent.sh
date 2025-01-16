@@ -27,7 +27,7 @@ CUDA_VISIBLE_DEVICES=0 python -u engine.py \
     --max_dec_seq_length 360 \
     --window_size 250 \
     --bipartite \
-    --hpnfile prototypes_wiki/large/prototypes-1024d-81c_mutil${num_proto_per_type} _proto_sem.npy \
+    --hpnfile prototypes_wiki/large/prototypes-1024d-81c_mutil${num_proto_per_type}_proto_sem.npy \
     --num_proto_per_type ${num_proto_per_type} \
     --role2id_file data/dset_meta/role2id_wikievent.json \
     --max_iter 1000
